@@ -7,7 +7,7 @@ git clone https://github.com/p2c6/post-app.git
 After cloning the repository,go to the **tallstack-post-app** directory:
 
 ```sh
-cd post-app
+cd tallstack-post-app
 ```
 
 Once you're in the **tallstack-post-app** directory, install all dependencies.
