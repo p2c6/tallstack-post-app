@@ -48,9 +48,9 @@ class PostResource extends Resource
                 TextEntry::make('date')->date(),
                 TextEntry::make('content')->html(),
                 TextEntry::make('user.name')->label('Created By'),
-                ImageEntry::make('image')->columns(1)
+                ImageEntry::make('image')
                     ,
-            ]);
+            ])->columns(1);
     }
 
     public static function table(Table $table): Table
