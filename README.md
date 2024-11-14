@@ -1,7 +1,7 @@
 # Clone Repository
 Go to your terminal and clone the repository:
 ```sh
-git clone https://github.com/p2c6/post-app.git
+git clone https://github.com/p2c6/tallstack-post-app.git
 ```
 
 After cloning the repository,go to the **tallstack-post-app** directory:
