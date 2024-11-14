@@ -32,6 +32,18 @@ After duplicating .**env**,  change the value of **APP_URL**.
 APP_URL=http://localhost:8000
 ```
 
+Still, in your env, setup also your database connection, in my case, I used **MySQL**. My current db name is **tallstack_post_app** but you can change it based on your preference.
+
+```sh
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=tallstack_post_app
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+
 After setting up **.env**, link the storage with the command below:
 
 ```sh
