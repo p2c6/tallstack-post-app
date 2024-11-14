@@ -11,6 +11,9 @@ use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
+use Filament\Infolists\Components\ImageEntry;
+use Filament\Infolists\Components\TextEntry;
+use Filament\Infolists\Infolist;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Columns\ImageColumn;
@@ -37,21 +40,34 @@ class PostResource extends Resource
             ])->columns(1);
     }
 
+    public static function infolist(Infolist $infolist): Infolist
+    {
+        return $infolist
+            ->schema([
+                TextEntry::make('title'),
+                TextEntry::make('date')->date(),
+                TextEntry::make('content')->html(),
+                TextEntry::make('user.name')->label('Created By'),
+                ImageEntry::make('image')->columns(1)
+                    ,
+            ]);
+    }
+
     public static function table(Table $table): Table
     {
         return $table
             ->columns([
+                ImageColumn::make('image'),
                 TextColumn::make('title')->searchable()->sortable(),
-                TextColumn::make('content')->searchable()->html(),
                 TextColumn::make('date')->date()->sortable(),
                 TextColumn::make('user.name')->searchable()->sortable()->label('Created By'),
-                ImageColumn::make('image'),
             ])
             ->filters([
                 SelectFilter::make('User')
                     ->relationship('user', 'name')
             ])
             ->actions([
+                Tables\Actions\ViewAction::make(),
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make(),
             ])
