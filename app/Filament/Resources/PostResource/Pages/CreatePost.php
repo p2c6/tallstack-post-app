@@ -4,8 +4,8 @@ namespace App\Filament\Resources\PostResource\Pages;
 
 use App\Filament\Resources\PostResource;
 use Filament\Actions;
+use Filament\Actions\Action;
 use Filament\Resources\Pages\CreateRecord;
-use Filament\Pages\Actions\ButtonAction;
 
 class CreatePost extends CreateRecord
 {
@@ -25,14 +25,14 @@ class CreatePost extends CreateRecord
     protected function getFormActions(): array
     {
         return [
-             ButtonAction::make('submit')
+             Action::make('submit')
              ->label('Create')
              ->action('submit')
              ->color('primary')
              ->requiresConfirmation(false),  
 
          // Cancel button
-         ButtonAction::make('cancel')
+         Action::make('cancel')
              ->label('Cancel')
              ->url($this->getRedirectUrl())
              ->color('gray'),
