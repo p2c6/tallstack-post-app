@@ -4,13 +4,13 @@ Go to your terminal and clone the repository:
 git clone https://github.com/p2c6/post-app.git
 ```
 
-After cloning the repository,go to the **post-app** directory:
+After cloning the repository,go to the **tallstack-post-app** directory:
 
 ```sh
 cd post-app
 ```
 
-Once you're in the **post-app** directory, install all dependencies.
+Once you're in the **tallstack-post-app** directory, install all dependencies.
 
 ```sh
 composer install
@@ -31,14 +31,6 @@ After duplicating .**env**,  change the value of **APP_URL**.
 ```sh
 APP_URL=http://localhost:8000
 ```
-
-Edit your database in your **.env**, the database default name in your **.env** is **post_app** but you can edit it based on your preference:
-```sh
-DB_DATABASE=post_app
-```
-
-Don't forget to create your database on database admin tools like **phpmyAdmin** which its name is the same on your variable DB_DATABASE on your **.env** file.
-
 
 After setting up **.env**, link the storage with the command below:
 
